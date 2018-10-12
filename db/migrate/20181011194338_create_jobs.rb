@@ -4,7 +4,7 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.integer :mechanic_id
       t.integer :customer_id
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

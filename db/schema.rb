@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_11_191342) do
+ActiveRecord::Schema.define(version: 2018_10_11_194433) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -18,9 +18,25 @@ ActiveRecord::Schema.define(version: 2018_10_11_191342) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.integer "mechanic_id"
+    t.integer "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "repairmen", force: :cascade do |t|
     t.string "name"
     t.integer "uid", limit: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string "description"
+    t.integer "price"
+    t.integer "job_id"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
