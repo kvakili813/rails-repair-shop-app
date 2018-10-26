@@ -1,0 +1,3 @@
+<%= form_for @job, :url => url_for(:controller => 'jobs', :action => 'update'), method: :patch do |f| %>
+  <%= render partial: 'job_form', locals: {f: f, repairman_id: @repairman.id} %>
+<% end %>

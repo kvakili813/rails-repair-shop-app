@@ -1,0 +1,4 @@
+<%= form_tag('/complete') do %>
+<%= render partial: '/repairmen/job_list', locals: {job_collection: @job} %>
+<%= submit_tag("Mark Selected Complete") %>
+<% end %>
