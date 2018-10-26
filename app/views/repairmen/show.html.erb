@@ -1,0 +1,18 @@
+<h1>Welcome, <%= current_repairman.name %>!</h1>
+
+<%= render partial: 'nav', locals: {rep: @repairman} %>
+
+<div id="new-job"></div>
+
+<div>
+  <h4>Your Pending Jobs:</h4>
+  <%= form_tag('/complete') do %>
+  <%= render partial: 'job_list', locals: {job_collection: @repairman.unfinished_jobs} %>
+  <%= submit_tag("Mark Selected Complete") %>
+  <% end %>
+</div>
+
+<div>
+  <h4>Your Completed Jobs:</h4>
+  <%= render partial: 'job_list', locals: {job_collection: @repairman.finished_jobs} %>
+</div>
