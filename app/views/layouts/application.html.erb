@@ -11,7 +11,7 @@
 
   <body>
   <nav>
-  <% if current_mechanic %>
+  <% if current_repairman %>
     <span>Logged in as <%= current_repairman.name %>.  |  </span>
     <span id="profile-button"><%= link_to "View Your Profile", repairman_path(current_repairman) %>  |  </span>
     <span id="home-button"><%= link_to "Home", "/" %>  |  </span>

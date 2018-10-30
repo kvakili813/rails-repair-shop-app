@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :mechanics, :controllers => {registrations: 'registrations'}
+  devise_for :repairmen, :controllers => {registrations: 'registrations'}
 
-root 'customers#index'
 
-get '/' => 'mechanics#home'
+get '/' => 'repairmen#home'
 
   resources :customers, except: [:show, :destroy]
 
-  resources :repairmen, only: [:show] do 
+  resources :repairmen, only: [:show] do
     resources :jobs
   end
 
