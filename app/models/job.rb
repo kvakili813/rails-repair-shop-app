@@ -4,7 +4,7 @@ class Job < ApplicationRecord
   has_many :tickets, dependent: :destroy
 
   validates :customer_id, presence: true
-  validates :mechanic_id, presence: true
+  validates :repairman_id, presence: true
 
   def tickets_attributes=(attributes)
     self.save

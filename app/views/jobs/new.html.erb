@@ -1,3 +1,5 @@
+<%= render partial: 'display_errors', locals: {job: @job} %>
+
 <%= form_for @job do |f| %>
   <%= render partial: 'job_form', locals: {f: f, repairman_id: @repairman.id} %>
 <% end %>
