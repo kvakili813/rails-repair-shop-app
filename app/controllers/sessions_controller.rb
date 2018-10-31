@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
  end
 
  def create
+   # auth = request.env["omniauth.auth"]
+
    repairman = Repairman.find_or_create_by(uid: auth['uid']) do |u|
      u.name = auth['info']['name']
      u.email = auth['info']['email']
@@ -19,12 +21,16 @@ class SessionsController < ApplicationController
    redirect_to repairman_path(repairman)
  end
 
- def auth
-   request.env['omniauth.auth']
- end
-
  def destroy
    session.destroy
    redirect_to '/'
  end
+
+private
+
+ def auth
+   request.env['omniauth.auth']
+ end
+
+
 end
