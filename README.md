@@ -1,24 +1,11 @@
-# README
+# Rails Repair Shop
+This is a Ruby on Rails app for assigning jobs and customers to repairmen. This app supports OAuth basic authentication through Facebook or basic signup through Devise.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Installation
+To install and run Rails Repair Shop on your computer, fork and clone this repository and cd into the 'rails-repair-shop-app' directory in your terminal. Once you're in the right directory, run 'bundle install' to install the gems needed for this app to function on your machine. Be sure to also run 'rake db:migrate' to create the necessary tables. When you are ready, type 'rails s' into the terminal to deploy a local server on your machine for testing and using the app.
 
-Things you may want to cover:
+# Contributing
+If you are interested in modifying or extending Rails Repair Shop, please feel free to fork this repository and make changes before submitting a pull request.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# License
+This project is available for use under the MIT license. You can read more about this license [here](https://opensource.org/licenses/MIT).
