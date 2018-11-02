@@ -3,5 +3,7 @@ class Ticket < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
 
+  scope :finished, -> {all.where(status: 1)}
+  
   enum status: [:pending, :completed]
 end

@@ -15,7 +15,7 @@ class Job < ApplicationRecord
   end
 
   def complete?
-    self.tickets.all == self.tickets.all.where(status: 1)
+    self.tickets.all == self.tickets.finished
   end
 
   def self.unfinished_jobs
