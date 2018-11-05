@@ -1,0 +1,4 @@
+<%= form_tag('/tickets/price_order') %>
+<li><%= @price_order.each do |price_order| %>
+  <%= price_order.price %><li>
+<% end %>

@@ -3,7 +3,8 @@ class Ticket < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
 
-  scope :finished, -> {all.where(status: 1)}
-  
+  scope :finished, -> { where(status: 1) }
+  scope :price_order, -> {order("tickets.price DESC") }
+
   enum status: [:pending, :completed]
 end

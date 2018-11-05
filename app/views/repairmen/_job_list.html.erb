@@ -1,6 +1,6 @@
 <ul>
 <% job_collection.each do |job| %>
-  <li>Repairman: <%= job.repairman.name %><br>Customer: <%= job.customer.name %><br>
+  <li>Repairman: <%= job.repairman.name %><br>Customer: <%= job.customer.name %><br>Location: <%= job.location %><br>
     <ul>
       <% job.tickets.each do |order| %>
         <li>

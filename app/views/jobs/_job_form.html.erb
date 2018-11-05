@@ -4,6 +4,9 @@
   <%= f.label :customer_id %>
   <%= f.collection_select :customer_id, Customer.all, :id, :name %><br><br>
 
+  <%= f.label "Location" %>
+  <%= f.select(:location, options_for_select(['1', '2', '3'])) %><br><br>
+
   <div>
     <%= f.fields_for :tickets do |ticket| %>
       <h4>Ticket:</h4>

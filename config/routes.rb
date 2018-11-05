@@ -15,5 +15,5 @@ get '/' => 'repairmen#home'
 
   get '/auth/facebook/callback' => 'sessions#create'
 
-
+  get '/tickets/price_order', to: 'tickets#ticket_price'
 end
