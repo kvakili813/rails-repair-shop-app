@@ -1,17 +1,27 @@
-<h1>Welcome to Repair Shop!</h1>
+<h1 class="col-lg-6 col-lg-offset-3">Welcome to Repair Shop!</h3>
+
 
 <%= render partial: "nav", locals: {rep: @repairman} %>
 
-  <div>
-    <h4>All Pending Jobs:</h4>
+<div class="col-lg-6 col-lg-offset-3">
+    <h4 id="pending-header">All Pending Jobs:</h4>
     <%= form_tag('/complete') do %>
-    <%= render partial: 'repairmen/job_list', locals: {job_collection: Job.unfinished_jobs} %>
+    <div id="pending-list">
+  </div>
+  <%= submit_tag "Mark Selected Complete", :id => 'mark-complete', :class => 'btn-success' %>
+  <% end %>
+</div>
+    <!-- <%= render partial: 'repairmen/job_list', locals: {job_collection: Job.unfinished_jobs} %>
     <%= submit_tag("Mark Selected Complete") %>
     <% end %>
+  </div> -->
+
+  <div class="col-lg-6 col-lg-offset-3">
+    <h4 id="completed-header">All Completed Jobs:</h4>
+    <div id="completed-list">
+    </div>
   </div>
-
-
-<div>
+<!-- <div>
   <h4>All Completed Jobs:</h4>
   <%= render partial: 'repairmen/job_list', locals: {job_collection: Job.finished_jobs} %>
-</div>
+</div> -->
