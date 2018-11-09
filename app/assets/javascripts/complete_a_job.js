@@ -12,3 +12,11 @@ function completeJob(){
       pending_url = '/jobs?state=pending&scoped=true';
       completed_url ='/jobs?state=completed&scoped=true';
     }
+
+    $.post('/complete', { ids: ids}
+          ).done(function(){
+            appendPendingJobs(pending_url);
+            appendCompletedJobs(completed_url);
+          })
+      });
+    }
