@@ -1,3 +1,4 @@
+<div class="col-lg-6 col-lg-offset-3">
 <%= f.label :repairman_id %>
   <%= f.collection_select :repairman_id, Repairman.all, :id, :name, {selected: repairman_id} %><br><br>
 
@@ -18,4 +19,4 @@
     <% end %>
   </div>
 
-  <%= f.submit %>
+  <%= f.submit id: 'create-job' %>
