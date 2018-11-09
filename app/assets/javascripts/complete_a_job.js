@@ -20,3 +20,14 @@ function completeJob(){
           })
       });
     }
+
+    function getCheckedBoxes(){
+  var ids = [];
+    var boxes = document.getElementsByName("ids[]");
+    for (i = 0; i < boxes.length; i++){
+      if (boxes[i].checked){
+        ids.push(boxes[i]["value"])
+      }
+    }
+  return ids;
+}
