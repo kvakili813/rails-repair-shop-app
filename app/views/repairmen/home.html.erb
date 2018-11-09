@@ -18,3 +18,11 @@
     <div id="completed-list">
     </div>
   </div>
+
+  <script type="text/javascript" charset="utf-8">
+    $(function(){
+      setHeaders("All");
+      appendPendingJobs('/jobs?state=pending');
+      appendCompletedJobs('/jobs?state=completed');
+    });
+  </script>
