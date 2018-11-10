@@ -17,8 +17,7 @@
 <nav class="navbar-default container-fluid">
   <% if current_repairman %>
     <span>Logged in as <%= current_repairman.name %>.  |  </span>
-    <span id="profile-button"><%= link_to "View Your Profile", repairman_path(current_repairman) %>  |  </span>
-    <span id="home-button"><%= link_to "Home", "/" %>  |  </span>
+    <span id="home-link"><%= link_to "Home", "/" %>  |  </span>
     <span><%= link_to "Log Out", destroy_repairman_session_path, method: :delete %></span>
   <% else %>
     <span><%= link_to "Sign Up", new_repairman_registration_path %>  |  <span>
