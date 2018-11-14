@@ -41,3 +41,20 @@ function populateList(jobs){
   str = iterateJobs(jobs);
   return str;
 }
+
+function iterateJobs(jobs){
+  var str = "<ul>";
+  jobs.forEach(function(job){
+    var link_path = '/repairmen/' + job['repairman']['id'] + '/jobs/' + job['id'];
+    str += '<li>Repairman: ' + job['repairman']['name'] + '<br>';
+    str += 'Customer: ' + job['customer']['name'] + '<br>';
+    str += '<ul>';
+    str += iterateTickets(job['tickets']);
+    str += '</ul>';
+    str += '<button class="edit btn-info" href="' + link_path + '/edit">Edit Job</button>  |  ';
+    str += '<button class="delete btn-danger" href="' + link_path + '">Delete Job</button><br><br>';
+    str += '</li>';
+  });
+  str += '</ul>';
+  return str;
+}
