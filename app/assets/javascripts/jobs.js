@@ -28,3 +28,16 @@ function appendPendingJobs(url){
       $('#pending-list').html(populateList(jobs));
   });
 }
+
+function appendCompletedJobs(url){
+  $.get(url
+    ).done(function(jobs){
+      $('#completed-list').html(populateList(jobs));
+    });
+}
+
+function populateList(jobs){
+  var str = "";
+  str = iterateJobs(jobs);
+  return str;
+}
