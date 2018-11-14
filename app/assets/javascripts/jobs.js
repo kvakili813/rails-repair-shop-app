@@ -58,3 +58,22 @@ function iterateJobs(jobs){
   str += '</ul>';
   return str;
 }
+
+function iterateTickets(orders){
+  var str = "";
+  orders.forEach(function(order){
+    str += '<li>' + order['description'] + ', ';
+    str += '$' + order['price'] + ', ';
+    str += '<strong>' + order['status'] + '</strong>'
+    if(order['status'] === 'pending'){
+      str += ', mark complete? <input type="checkbox" name="ids[]" value="' + order['id'] + '">';
+    }
+    str += '</li>';
+  });
+  return str;
+}
+
+function setHeaders(arg){
+  $('#pending-header').text(arg + " Pending Jobs:");
+  $('#completed-header').text(arg + " Completed Jobs:");
+}
