@@ -13,4 +13,13 @@ function deleteJob(){
       pending_url = '/jobs?state=pending&scoped=true';
       completed_url ='/jobs?state=completed&scoped=true';
     }
-  
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: {"_method": "delete"},
+      complete: function(){
+        $(item).parent().hide(500);
+      }
+    });
+  })
+}
