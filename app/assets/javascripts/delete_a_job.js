@@ -3,22 +3,27 @@ $(function(){
 });
 
 function deleteJob(){
-  $(document).on('click', '.delete', function(event){
+  $(document).on('click', 'button.delete.btn-danger', function(event){
     event.preventDefault();
-    var item = this;
-    var url = this.href;
-    var pending_url = '/jobs?state=pending';
-    var completed_url = '/jobs?state=completed';
-    if ($('#pending-header').text() === "Your Pending Jobs:"){
-      pending_url = '/jobs?state=pending&scoped=true';
-      completed_url ='/jobs?state=completed&scoped=true';
-    }
+    let job_id = parseInt(event.target.id)
+
+    // var item = this;
+    var url = this.attributes.href.value;
+    // var pending_url = '/jobs?state=pending';
+    // var completed_url = '/jobs?state=completed';
+    // if ($('#pending-header').text() === "Your Pending Jobs:"){
+    //  pending_url = '/jobs?state=pending&scoped=true';
+    //  completed_url ='/jobs?state=completed&scoped=true';
+   //  }
     $.ajax({
-      type: "POST",
+      type: "DELETE",
       url: url,
-      data: {"_method": "delete"},
+      data: {id: job_id},
       complete: function(){
-        $(item).parent().hide(500);
+        // refresh list of jobs
+
+       appendAllJobs();
+        // $(item).parent().hide(500);
       }
     });
   })
