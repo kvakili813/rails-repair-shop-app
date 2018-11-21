@@ -3,4 +3,5 @@ class JobSerializer < ActiveModel::Serializer
   has_many :tickets
   has_one :repairman
   has_one :customer
+  has_one :location
 end

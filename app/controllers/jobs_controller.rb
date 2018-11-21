@@ -13,7 +13,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @repairman = Repairman.find_by(id: params[:job][:repairman_id])
     if @job.save
-      redirect_to repairman_job_path(@repairman.id, @job.id)
+      render json: @job, status: 201
     else
       render 'new'
     end
@@ -36,8 +36,18 @@ class JobsController < ApplicationController
   end
 
   def destroy
+    set_job
     @job.destroy
     redirect_to '/'
+  end
+
+  def jobs
+    params[:scoped] ? scope = current_repairman : scope = Job
+    if params[:state] == 'completed'
+      render json: scope.finished_jobs
+    else
+      render json: scope.unfinished_jobs
+    end
   end
 
   private

@@ -16,4 +16,8 @@ get '/' => 'repairmen#home'
   get '/auth/facebook/callback' => 'sessions#create'
 
   get '/tickets/price_order', to: 'tickets#ticket_price'
+
+  get '/jobs' => 'jobs#jobs'
+ get '/get_mechanic_pending_jobs' => 'jobs#mechanic_pending_jobs'
+ get '/get_mechanic_completed_jobs' => 'jobs#mechanic_completed_jobs'
 end

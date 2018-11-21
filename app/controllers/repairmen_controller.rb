@@ -6,7 +6,8 @@ class RepairmenController < ApplicationController
     @repairman = current_repairman
   end
 
-  # def show
-  #   @repairman = Repairman.find(params[:id])
-  # end
+  def show
+      @repairman = Repairman.find(params[:id])
+    end
+
 end

@@ -14,6 +14,7 @@ function createJob(){
         var job = data['id'];
         var str = '<li>Repairman: ' + data['repairman']['name'] + '</li>';
         str += '<li>Customer: ' + data['customer']['name'] + '</li>';
+        str += '<li>Location: ' + data['location'] + '</li>';
         str += '<li>Tickets:<ul>';
         data['tickets'].forEach(function(order){
           str += '<li>Description: ' + order['description'] + '</li>';

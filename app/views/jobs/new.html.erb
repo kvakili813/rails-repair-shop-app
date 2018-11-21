@@ -3,3 +3,7 @@
 <%= form_for @job do |f| %>
   <%= render partial: 'job_form', locals: {f: f, repairman_id: @repairman.id} %>
 <% end %>
+
+<div class="col-lg-6 col-lg-offset-3">
+  <ul id="new-ajax-jobs"></ul>
+</div>
