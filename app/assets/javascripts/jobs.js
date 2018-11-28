@@ -1,7 +1,34 @@
 $(function(){
   homeButton();
   profileButton();
+  readMoreButton();
 });
+
+function readMoreButton(){
+  $(document).on('click', 'button.read-more.btn-more', function(event){
+    event.preventDefault();
+
+    appendReadMore('/repairmen/8/jobs/99')
+  });
+}
+
+function appendReadMore(url){
+// console.log(url);
+  //$.get(url).done(function(result){
+
+  //});
+  $.get(url, function (result){
+// console.log(result);
+    //console.log("result is "+result.location);
+    //   console.log(JSON.parse(result).location);
+    $("#ReadMoreSpan").html("Location:"+result[0].location);
+  });
+}
+//     $.ajax({
+//       method: "GET",
+//       url: this.href,
+//     }).done(function(json){
+
 
 function homeButton(){
   $(document).on('click', '#home-button', function(event){
@@ -63,6 +90,7 @@ function iterateJobs(jobs){
     str += '<button class="edit btn-info" href="' + link_path + '/edit">Edit Job</button>  |  ';
     str += '<button ' + `id=${job_id} ` + 'class="delete btn-danger" href="' + link_path + '">Delete Job</button> | ';
     str += '<button class="read-more btn-more" href="' + link_path + '/show">Read More</button> <br><br>';
+str+='<span id="ReadMoreSpan" ></span>';
     str += '</li>';
   });
   str += '</ul>';
