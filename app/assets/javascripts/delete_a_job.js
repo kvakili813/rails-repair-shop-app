@@ -20,9 +20,9 @@ function deleteJob(){
       url: url,
       data: {id: job_id},
       complete: function(){
-        // refresh list of jobs
+      // refresh list of jobs
 
-       appendAllJobs();
+      appendAllJobs();
         // $(item).parent().hide(500);
       }
     });

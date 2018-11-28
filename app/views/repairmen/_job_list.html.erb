@@ -12,5 +12,6 @@
   </li>
   <%= link_to "Edit Job", edit_repairman_job_path(job.repairman, job) %>  |
   <%= link_to "Delete Job", "/repairmen/#{job.repairman.id}/jobs/#{job.id}", method: :delete %><br><br>
+  <!-- <button id="location" class="js-more" onclick="moreInfo(this)">Show Location</button> -->
 <% end %>
 </ul>

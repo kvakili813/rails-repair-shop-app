@@ -22,6 +22,7 @@ class JobsController < ApplicationController
   def show
     @job = []
     @job << Job.find(params[:id])
+    render json: @job, status: 201
   end
 
   def edit

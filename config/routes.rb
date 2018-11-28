@@ -18,6 +18,7 @@ get '/' => 'repairmen#home'
   get '/tickets/price_order', to: 'tickets#ticket_price'
 
   get '/jobs' => 'jobs#jobs'
- get '/get_mechanic_pending_jobs' => 'jobs#mechanic_pending_jobs'
- get '/get_mechanic_completed_jobs' => 'jobs#mechanic_completed_jobs'
+ get '/get_repairman_pending_jobs' => 'jobs#repairman_pending_jobs'
+ get '/get_repairman_completed_jobs' => 'jobs#repairman_completed_jobs'
+ get '/repairman_job_path' => 'jobs#show'
 end
