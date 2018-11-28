@@ -7,8 +7,7 @@ $(function(){
 function readMoreButton(){
   $(document).on('click', 'button.read-more.btn-more', function(event){
     event.preventDefault();
-
-    appendReadMore('/repairmen/8/jobs/99')
+    appendReadMore(this.attributes.href.value)
   });
 }
 
@@ -89,7 +88,7 @@ function iterateJobs(jobs){
     str += '</ul>';
     str += '<button class="edit btn-info" href="' + link_path + '/edit">Edit Job</button>  |  ';
     str += '<button ' + `id=${job_id} ` + 'class="delete btn-danger" href="' + link_path + '">Delete Job</button> | ';
-    str += '<button class="read-more btn-more" href="' + link_path + '/show">Read More</button> <br><br>';
+    str += '<button class="read-more btn-more" href="' + link_path + '">Read More</button> <br><br>';
 str+='<span id="ReadMoreSpan" ></span>';
     str += '</li>';
   });
